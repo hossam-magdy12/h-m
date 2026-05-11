@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Margona — الحسابات</title>
+<link rel="stylesheet" href="links.css">
+</head>
+<body>
+
+<div class="bg">
+  <div class="bg-dots"></div>
+  <div class="orb o1"></div>
+  <div class="orb o2"></div>
+</div>
+
+<div class="page">
+
+  <div class="header">
+    <div class="logo-wrap">
+      <img src="logo.jpg" alt="Margona">
+    </div>
+    <h1><span>Margona Accounts</span></h1>
+    <p>روابط الحسابات والإدارات المالية</p>
+  </div>
+
+  <div class="search-wrap">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search" placeholder="ابحث عن حساب..." oninput="filterCards()">
+  </div>
+
+  <div class="view active">
+    <div class="sec-title">
+      <span>💰</span>
+      الحسابات الرئيسية
+    </div>
+
+    <div class="grid">
+
+      <a class="card" href="#" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">🏢</div>
+          <div class="card-name">حسابات مرجونه أبو المطامير</div>
+        </div>
+        <div class="card-desc">
+          إدارة حسابات فرع أبو المطامير
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Accounts</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="#" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">🏢</div>
+          <div class="card-name">حسابات مرجونه النوبارية</div>
+        </div>
+        <div class="card-desc">
+          إدارة حسابات فرع النوبارية
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Accounts</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="#" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">🏢</div>
+          <div class="card-name">حسابات مرجونه برج العرب</div>
+        </div>
+        <div class="card-desc">
+          إدارة حسابات فرع برج العرب
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Accounts</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1KIzVQFBkpzZtkyFOHtR1uMRthEVdnkVbNU2PeIYl9ug/edit?gid=2040453435#gid=2040453435" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">🏫</div>
+          <div class="card-name">حسابات AI School</div>
+        </div>
+        <div class="card-desc">
+          إدارة حسابات ومصاريف وإيرادات AI School
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Google Sheets</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1kw9AoFmUuApzL6ZTxVkUJjykSFVhdbMB/edit?gid=1441883291#gid=1441883291" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">📒</div>
+          <div class="card-name">حسابات Master اليومية</div>
+        </div>
+        <div class="card-desc">
+          متابعة الحسابات اليومية الخاصة بـ Master
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Google Sheets</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://docs.google.com/spreadsheets/d/1rDGEM2AUT17z2z_5zDwx0W62X5hZx0oF/edit?gid=873907961#gid=873907961" target="_blank">
+        <div class="card-top">
+          <div class="card-icon">📊</div>
+          <div class="card-name">تقفيل Master الأسبوعي</div>
+        </div>
+        <div class="card-desc">
+          متابعة وتقفيل الحسابات الأسبوعية
+        </div>
+        <div class="card-footer">
+          <span class="card-type">Google Sheets</span>
+          <span class="card-arrow">↗</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
+<div id="empty" class="empty-state">
+  لا توجد نتائج بحث
+</div>
+
+<script>
+function filterCards() {
+  const q = document.getElementById('search').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+  let found = false;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    const match = text.includes(q);
+
+    card.style.display = match ? '' : 'none';
+
+    if (match) found = true;
+  });
+
+  document.getElementById('empty').style.display =
+    found ? 'none' : 'block';
+}
+</script>
+
+</body>
+</html>
